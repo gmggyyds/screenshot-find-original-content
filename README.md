@@ -2,11 +2,12 @@
 
 # screenshot-find-original-video
 
-**截图、二创、搬运片 → 找回原视频。以画面为准，不靠标题猜。**
+**截图、二创、搬运片 → 找回原片或原帖。以画面为准，不靠标题猜。**
 
 <p>
-<img src="https://img.shields.io/badge/platform-YouTube_first-red" alt="YouTube first">
-<img src="https://img.shields.io/badge/Douyin%20%2F%20X-stub-lightgrey" alt="Douyin X stub">
+<img src="https://img.shields.io/badge/YouTube-primary-red" alt="YouTube">
+<img src="https://img.shields.io/badge/X-primary-black" alt="X">
+<img src="https://img.shields.io/badge/Douyin-stub-lightgrey" alt="Douyin stub">
 <img src="https://img.shields.io/badge/for-Grok_Bot_skill-black" alt="Grok Bot skill">
 </p>
 
@@ -24,7 +25,7 @@
 2. 把它做成助手的 skill（或整仓交给会跑 skill 的 Bot）
 3. 丢一张短视频截图 / 二创画面，说：「找到原视频」
 
-直接说人话就行，例如：「这是视频号截的，帮我找回 YouTube 原片。」
+直接说人话就行，例如：「这是视频号截的，帮我找回原片。」
 
 ---
 
@@ -33,22 +34,24 @@
 | 没有它 | 有它 |
 |---|---|
 | 搜标题，找一堆「主题很像」的长视频 | 先对画面：人物、场景、道具、字幕时刻 |
+| 帧里是推文卡还去 YouTube 硬凑 | 认出 X UI → 直接搜原帖交链接 |
 | 用户说「画面不对」还继续推销同一条 | 否定即作废，换路径 |
-| 把二创口播者当成原作者 | 分清画面源 vs 内容源 |
 
-**成功标准只有一条：画面要对上。** 对不上就老实说，并单独标「内容源 ≠ 画面源」。
+**成功标准：画面要对上。** 对不上就老实说，并单独标「内容源 ≠ 画面源」。
 
 ---
 
 ## 🧭 怎么跑（摘要）
 
-完整步骤在 [`SKILL.md`](./SKILL.md)。主路径：
+完整步骤在 [`SKILL.md`](./SKILL.md)。
 
 ```
-读截图 → 裁掉 UI → 以图搜图 → 线索检索（辅助）→ 视觉核验（必做）→ 定案
+读截图 → 分流
+  ├─ 帧里是 X/Twitter 推文卡 → 搜 X 原帖 → 定案
+  └─ 实拍/口播/棚景 → 以图搜图 → YouTube 视觉核验 → 定案
 ```
 
-当前主力平台：**YouTube**（可带时间戳）。抖音 / 视频号、X 在 skill 文末预留，工具齐了再补。
+抖音 / 视频号入口仍预留。
 
 ---
 
@@ -63,11 +66,9 @@
 
 ## 🏁 说到底
 
-**主题像不算找到。** 用户要的是那一镜，不是同赛道的另一条片。
+**主题像不算找到。** 用户要的是那一镜或那条原帖，不是同赛道的另一条片。
 
 **先画面，后文案。** 标题只是线索。
-
-下次卡住时：裁一帧干净画面，丢给会跑这个 skill 的助手。
 
 ---
 
